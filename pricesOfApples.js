@@ -9,7 +9,7 @@ module.exports = function(fruit){
       });
     }
   }
-//  console.log(pArray)
+// console.log(pArray)
 // sorting my data to be ascending by price
   var byApple = pArray.slice(0);
      byApple.sort(function(a,b) {

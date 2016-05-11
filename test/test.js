@@ -3,11 +3,13 @@ var string = require('../string');
 var cheapest = require('../cheapest');
 var expensive = require('../expensive');
 var average = require('../average');
+var pricePerAvo = require('../pricePerAvo');
 var cheapest_shop = require('../cheapest_shop');
 var pricesOfApples = require('../pricesOfApples');
 var pricesInDescending = require('../pricesInDescending');
 var cheapestFruit = require('../cheapestFruit');
-var pricePerAvo = require('../pricePerAvo');
+var sellingOranges = require('../sellingOranges');
+var sellerOfTheFruit = require('../sellerOfTheFruit');
 
 
 var avos = "1 for R3, 2 for R7, 3 for R10, 5 for R14.50";
@@ -88,7 +90,17 @@ describe('fruition test', function(){
   )
   })
   it('it should return the cheapest fruit', function(){
-    assert.equal(cheapestFruit(shops), 'bananas')
+    assert.equal(cheapestFruit(shops),'apples')
   })
-
+  it('it should return the seller of the cheapest fruit', function(){
+    assert.equal(sellerOfTheFruit(shops),'chockers')
+  })
+  it('it should return all the shops that sell oranges', function(){
+    assert.deepEqual(sellingOranges(shops),[
+      { shop: 'woolingsworth' },
+      { shop: 'chockers' },
+      { shop: 'pickle pay' },
+      { shop: 'kwakspar' }
+    ])
+  })
 });
